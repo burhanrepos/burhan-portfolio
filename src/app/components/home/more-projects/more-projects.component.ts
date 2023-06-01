@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
+import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
   selector: 'app-more-projects',
@@ -11,10 +12,19 @@ export class MoreProjectsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public analyticsService: AnalyticsService
+    public analyticsService: AnalyticsService,
+    public languageService: LanguageService
     ) { }
 
+    public otherProjects:any;
+
     ngOnInit() {
+
+      this.languageService.translateService.get("OtherProjects.Projects").subscribe((val:any) => {
+        console.log("OtherProjects.Projects==========",val);
+        this.otherProjects=val;
+        
+        })
         this.router.events.subscribe((evt) => {
             if (!(evt instanceof NavigationEnd)) {
                 return;

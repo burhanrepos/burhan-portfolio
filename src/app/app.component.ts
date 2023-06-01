@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import AOS from 'aos/src';
+import * as AOS from 'aos';
+
 import { Title, Meta } from '@angular/platform-browser';
 import { LanguageService } from "src/app/services/language/language.service"
 
@@ -26,6 +27,6 @@ export class AppComponent {
       { name: 'description', content: 'As a software engineer with expertise in both MEAN and MERN stacks, I have a comprehensive understanding of full-stack web development. My strong foundation in JavaScript allows me to effectively work with front-end technologies such as Angular and React, as well as back-end technologies such as Node.js and Express.' },
     ]);
     
-    // AOS.init();
+    AOS.init();
 }
 }
