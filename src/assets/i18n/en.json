@@ -50,7 +50,7 @@
     },
     {
       "Tab": "MicroMerger",
-      "Title": "Internship",
+      "Title": "Backend-Internee",
       "Date": "January 2022 - March 2022",
       "Description": [
         "Design, develop and maintain high-quality and generally reliable Python codes.",
@@ -64,46 +64,52 @@
   "FeatureProjects.Label": "Featured Project",
   "FeatureProjects.Projects": [
     {
-      "Title": "2x School",
-      "Description": "A Next Generation School Management System application made from scratch with auth module, <span class='underline'>configurable graphics</span>, <span class='underline'>configurable alarms</span>, and <span class='underline'>user management</span>. It also has feedback form logic for parameter configuration.",
+      "Title": "One Diamond Marketing",
+      "Description": "One Diamond Marketing presents a revolutionary project boasting seamless integration of Syncfusion Calendar, dynamic charts, JSON to PDF conversion, optimized performance, and robust authentication.Angular Reactive Forms are also implemented. Experience the future of marketing.",
       "imgs": [
-        "assets/images/school/image1.png",
-        "assets/images/school/image2.png"
+        "assets/images/onediamond/image1.png",
+        "assets/images/onediamond/image2.jpg"
       ],
       "Technologies": [
         "Angular",
-        "SASS",
+        "SCSS ",
         "Angular Material",
-        "RxJS"
+        " RxJS "
       ]
     },
     {
-      "Title": "Best Buy Mall",
-      "Description": "Best Buy Mall is Online Shopping Mall where you can buy your groceries and household products from your favourite local stores. It has <span class='underline'>online chat, </span, <span class='underline'> &nbsp;order history</span>, <span class='underline'>notification system on number and mail</span>, <span class='underline'>auth</span>, and <span class='underline'>stripe integration for secure payments.</span>",
+      "Title": "Multi-Tasker(Mobile App)",
+      "Description": "This platform will offer a solution for the tradesmen with their next task without any difficulty  or waiting for their next project, as the tradesmen also want the shortest possible delay in between their services. The tradesmen's dilemma of not having to work for a company where they are  given a salary but are still required to work is likewise resolved by doing this. It has <span class='underline'> report, </span>, <span class='underline'> &nbsp;order history</span>, <span class='underline'> Post Task</span>, <span class='underline'>auth</span>, and <span class='underline'>stripe integration for secure payments.</span>",
       "imgs": [
-        "assets/images/bbm/image1.png",
-        "assets/images/bbm/image2.png"
+        "assets/images/multitasker/image1.jpg",
+        "assets/images/multitasker/image2.jpg",
+        "assets/images/multitasker/image3.jpg",
+        "assets/images/multitasker/image4.jpg"
       ],
       "Technologies": [
-        "Angular",
-        "SASS",
-        "Material",
-        "RxJS",
+        "React-Native-CLI",
+        "React",
+        "Stripe",
+        "Firebase",
+        "NodeJS",
         "ExpressJS"
       ]
     },
     {
-      "Title": " Mazhr",
-      "Description": " Mazhr is a Finnish Intelligent Potential and Talent Management company. that help organizations to build better and more efficient teams by matching their  <span class='underline'>Talent</span> and <span class='underline'>Potentials</span>. It has various installations made from scratch with auth module, <span class='underline'>configurable graphics</span>, <span class='underline'>configurable alarms</span>, <span class='underline'>user management</span>, and <span class='underline'>geolocation with openlayers.</span>",
+      "Title": " Multi-Tasker- Admin-Panel",
+      "Description": " This is the admin panel for the multi-tasker application.  These features empower administrators to efficiently manage users, tasks, payments, support, and platform security.This is updated with <span class='underline'><user management</span>, <span class='underline'>reporting and analytics</span>, <span class='underline'>payment management</span>, <span class='underline'> security and permissions</span>, <span class='underline'>dashboard</span>, <span class='underline'>review and rating management</span>, <span class='underline'>task filtering</span>.",
       "imgs": [
-        "assets/images/mazhr/image1.png"
+        "assets/images/mt-admin-panel/image1.jpg",
+        "assets/images/mt-admin-panel/image2.jpg",
+        "assets/images/mt-admin-panel/image3.jpg",
+        "assets/images/mt-admin-panel/image4.jpg"
       ],
       "Technologies": [
-        "React",
-        "SASS",
+        "Angular",
+        "SCSS",
+        "Bootstrap",
         "Material",
-        "Babel",
-        "NodeJS"
+        "Firebase"
       ]
     },
     {

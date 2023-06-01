@@ -26,15 +26,17 @@
                 </div>
                 <div [class.project-info-right]='i%2==0' [class.project-info-left]='i%2!=0' class="h-100" style="background-image: url('{{project.img}}');">
                     <div class="project-box">
-                        <h4 [class.text-right]='i%2==0' [class.text-left]='i%2!=0' class="feature-project">{{"FeatureProjects.Label" | translate}}</h4>
-                        <h5 [class.text-right]='i%2==0' [class.text-left]='i%2!=0' class="project-name">{{project.Title}}</h5>
+                       <div [class.align-items-end]='i%2==0' [class.align-items-start]='i%2!=0' class="d-flex flex-column">
+                        <h4 class="feature-project">{{"FeatureProjects.Label" | translate}}</h4>
+                        <h5 class="project-name">{{project.Title}}</h5>
 
+                       </div>
                         <div class="project-description-box" (click)='debug()'>
                             <p class="mb-0" [innerHTML]="project.Description">
                             </p>
                         </div>
                         <ul [class.justify-content-end]='i%2==0' [class.justify-content-start]='i%2!=0' class="project-skills">
-                            <li *ngFor='let technology of project.Technologies' class="ml-3">
+                            <li *ngFor='let technology of project.Technologies' class="me-2">
                               <span class="underline technology">{{technology}}</span>
                             </li>
                         </ul>
