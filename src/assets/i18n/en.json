@@ -17,8 +17,8 @@
   "Experience.Title": "Experience",
   "Experience.Jobs": [
     {
-      "Tab": "ASM Tech Office (Remote)<br>Envysol (Onsite)",
-      "Title": "Frontend developer",
+      "Tab": "ASM Tech Office (Remote)",
+      "Title": "Frontend developer |  Envysol (Onsite)",
       "Date": "Feb 2023 - Present",
       "Description": [
         "Developed and maintained a web-based application for a Tax Office using Angular, resulting in improved user experience and increased performance.",
@@ -30,8 +30,8 @@
       ]
     },
     {
-      "Tab": "Trillo Inc (Remote)<br>Z-Axis (Onsite)",
-      "Title": "Frontend Engineer",
+      "Tab": "Trillo Inc (Remote)",
+      "Title": "Frontend Engineer | Z-Axis (Onsite)",
       "Date": "April 2022 - Feburary 2023",
       "Description": [
         "<span class='underline'>Angular Developer</span>",
