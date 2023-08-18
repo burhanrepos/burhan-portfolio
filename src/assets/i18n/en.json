@@ -17,11 +17,10 @@
   "Experience.Title": "Experience",
   "Experience.Jobs": [
     {
-      "Tab": "Envysol",
-      "Title": "Frontend Developer",
+      "Tab": "ASM Tech Office (Remote)",
+      "Title": "Frontend developer |  Envysol (Onsite)",
       "Date": "Feb 2023 - Present",
       "Description": [
-        "<span>Remote Frontend Developer at ASM Tech Office</span>"
         "Developed and maintained a web-based application for a Tax Office using Angular, resulting in improved user experience and increased performance.",
         "Integrated RESTful APIs of NestJS to support multiple applications, using Angular for frontend development.",
         "Built a real-time chat application using WebSockets and Angular, increasing communication and collaboration among team members.",
@@ -31,11 +30,10 @@
       ]
     },
     {
-      "Tab": "Z-Axis",
-      "Title": "Frontend Engineer",
+      "Tab": "Trillo Inc (Remote)",
+      "Title": "Frontend Engineer | Z-Axis (Onsite)",
       "Date": "April 2022 - Feburary 2023",
       "Description": [
-        "<span>Remote Frontend Engineer at Trillo Inc</span>"
         "<span class='underline'>Angular Developer</span>",
         "Using HTLM,CSS and BOOTSTRAP to create a user-friently and responsive web pages",
         "Use of UI design tools such as Figma.",
