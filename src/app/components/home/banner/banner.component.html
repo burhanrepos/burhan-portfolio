@@ -7,8 +7,8 @@
                   <h1>Hello! My name is</h1>
               </div>
               <div class='banner-title'>
-                  <h2>Burhan Shaheen.</h2>
-                  <h3>Front End Engineer</h3>
+                  <h2 [innerHTML]='"Banner.candidateName" | translate'></h2>
+                  <h3 [innerHTML]='"Banner.jobTitle" | translate'></h3>
               </div>
               <div class='banner-description'>
                   <p [innerHTML]='"Banner.Description" | translate' class="mt-4"></p>

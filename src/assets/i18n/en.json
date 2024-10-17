@@ -4,84 +4,98 @@
   "Header.Item3": "Projects",
   "Header.Item4": "Contact",
   "Header.cvBtn": "Resume",
-  "Header.cvName": "burhanCV.pdf",
+  "Header.cvName": "burhan_resume.pdf",
+  "Banner.candidateName":"Burhan Shaheen",
+  "Banner.jobTitle":"Full Stack Engineer",
   "Banner.Pretitle": "Hello! My name is",
-  "Banner.Description": "I have <span class='underline'>1.5+ years of experience </span> s a website and mobile app developer, I specialize in <span class='underline'>Angular, Flutter, React, React Native</span> , and more  I create clean, scalable code and develop systems, interfaces, bots, and technological solutions to improve the web. My dedication to best practices ensures reusable code in  <span class='underline'>Angular, Flutter, React, React Native, and Python</span> Passionate about enhancing user experiences, I push boundaries and deliver exceptional results in the digital realm.",
-  "Banner.ActionBtn": "Get in touch",
+ "Banner.Description": "I possess <span class='underline'>extensive hands-on experience</span> as a website and mobile app developer, specializing in <span class='underline'>Angular, Flutter, React, React Native, and Next.js</span>. I excel at crafting clean, scalable code and developing robust systems and intuitive interfaces that enhance user experience. My commitment to industry best practices ensures the creation of <span class='underline'>reusable and maintainable code</span>. Passionate about optimizing digital solutions, I consistently deliver exceptional results that push the boundaries of innovation.",
+ "Banner.ActionBtn": "Get in touch",
   "AboutMe.Title": "About me",
   "AboutMe.Paragraphs": [
-    "In my <span class='underline'>1.5 years as a developer</span>, I seek to train every day. I am <span class='underline'>performing continuous integration</span>, and covering frontend developer roles with <span class='underline'>Angular,Flutter,React and React-Native</span>. I have team having empathy, exercising motivation to partners, and setting plans and goals together.",
-    "My skills also include implementing system improvements, optimizing sites, standardizing patterns, and suggesting and executing ideas that add value to the project I'm working on.",
-    "Some of the technologies that I have trained and worked on include (but are not limited to):"
+    "As a developer, I am committed to continuous improvement. I excel in <span class='underline'>performing continuous integration</span> and covering frontend developer roles with <span class='underline'>Angular, Flutter, React, React Native, and Next.js</span>. I am part of a team that values empathy, motivation, and collaboration to set plans and goals together.",
+    "My skills include implementing system improvements, optimizing sites, standardizing patterns, and executing ideas that add value to the projects I'm involved in.",
+    "Some of the technologies I have trained and worked on include (but are not limited to):"
   ],
   "Experience.Title": "Experience",
   "Experience.Jobs": [
     {
+      "Tab": "Upstart Commerce",
+      "Title": "Full Stack Engineer",
+      "Date": "May 2024 - Present",
+      "Description": [
+        "Working as a Full Stack Engineer at Upstart Commerce, focusing on both frontend and backend development.",
+        "Developing and maintaining web applications using Next.js, ensuring high performance and responsiveness.",
+        "Collaborating with cross-functional teams to define, design, and ship new features.",
+        "Integrating with third-party APIs and implementing user authentication for secure access.",
+        "Conducting code reviews and contributing to a culture of continuous improvement."
+      ]
+    },
+    {
       "Tab": "Envysol",
       "Title": "Frontend Developer",
-      "Date": "Feb 2023 - Present",
+      "Date": "Feb 2023 - Aug 2024",
       "Description": [
         "<span class='underline'>Remote Frontend Developer at ASM Tech Office</span>",
         "Developed and maintained a web-based application for a Tax Office using Angular, resulting in improved user experience and increased performance.",
         "Integrated RESTful APIs of NestJS to support multiple applications, using Angular for frontend development.",
-        "Built a real-time chat application using WebSockets and Angular, increasing communication and collaboration among team members.",
-        "Implementation of continuous integration and daily backups.",
-        "Taking charge of a single resource, successfully leading the development of two frontend projects for the Tax Office platform, utilizing Angular and Angular Material.",
-        "Planning meetings and generating reports."
+        "Built a real-time chat application using WebSockets and Angular, enhancing communication and collaboration among team members.",
+        "Implemented continuous integration and daily backups.",
+        "Successfully led the development of two frontend projects for the Tax Office platform, utilizing Angular and Angular Material.",
+        "Conducted planning meetings and generated reports."
       ]
     },
     {
       "Tab": "Z-Axis",
       "Title": "Frontend Engineer",
-      "Date": "April 2022 - Feburary 2023",
+      "Date": "April 2022 - Feb 2023",
       "Description": [
         "<span class='underline'>Remote Frontend Engineer at Trillo Inc</span>",
         "<span class='underline'>Angular Developer</span>",
-        "Using HTLM,CSS and BOOTSTRAP to create a user-friently and responsive web pages",
-        "Use of UI design tools such as Figma.",
-        "Building reusable code for future use.",
-        "Get feedback from, and build solutions for users and customers",
-        "Optimizing web pages for maximum speed and scalability.",
+        "Created user-friendly and responsive web pages using HTML, CSS, and Bootstrap.",
+        "Utilized UI design tools such as Figma.",
+        "Built reusable code for future use.",
+        "Gathered feedback and built solutions for users and customers.",
+        "Optimized web pages for maximum speed and scalability.",
         "<span class='underline'>Flutter Developer</span>",
-        "Android and IOS mobile application development.",
-        "Optimization of UI for multiple-sized mobile devices.",
-        "3D Model Integration.",
-        "Integration of APIs and Micro-Services.",
-        "Design ergonomic and user-friendly UI."
+        "Developed Android and iOS mobile applications.",
+        "Optimized UI for various mobile device sizes.",
+        "Integrated 3D models.",
+        "Integrated APIs and Micro-Services.",
+        "Designed ergonomic and user-friendly UI."
       ]
     },
     {
       "Tab": "MicroMerger",
-      "Title": "Backend-Internee",
+      "Title": "Backend Intern",
       "Date": "January 2022 - March 2022",
       "Description": [
-        "Design, develop and maintain high-quality and generally reliable Python codes.",
-        "Maintain and update the design specifications and source code for the ERP system.",
-        "Collaborate with the technical team to improve application performance features.",
-        "Hardware Integration."
+        "Designed, developed, and maintained high-quality and reliable Python code.",
+        "Updated design specifications and source code for the ERP system.",
+        "Collaborated with the technical team to improve application performance features.",
+        "Performed hardware integration."
       ]
     }
   ],
-  "FeatureProjects.Title": "Projects that I was a part of",
+  "FeatureProjects.Title": "Projects I have contributed to",
   "FeatureProjects.Label": "Featured Project",
   "FeatureProjects.Projects": [
     {
       "Title": "One Diamond Marketing",
-      "Description": "One Diamond Marketing presents a revolutionary project boasting seamless integration of Syncfusion Calendar, dynamic charts, JSON to PDF conversion, optimized performance, and robust authentication.Angular Reactive Forms are also implemented. Experience the future of marketing.",
+      "Description": "One Diamond Marketing presents a revolutionary project boasting seamless integration of Syncfusion Calendar, dynamic charts, JSON to PDF conversion, optimized performance, and robust authentication. Angular Reactive Forms are also implemented. Experience the future of marketing.",
       "imgs": [
         "assets/images/onediamond/image1.png",
         "assets/images/onediamond/image2.jpg"
       ],
       "Technologies": [
         "Angular",
-        "SCSS ",
+        "SCSS",
         "Angular Material",
-        " RxJS "
+        "RxJS"
       ]
     },
-     {
+    {
       "Title": "One Diamond (Mobile Application)",
-      "Description": "One Diamond Marketing Mobile Application is application for the clients to view there details on mobile app.Which presents a revolutionary project boasting seamless integration of Syncfusion Calendar, dynamic charts, JSON to PDF conversion, optimized performance, and robust authentication.Angular Reactive Forms are also implemented. Experience the future of marketing.",
+      "Description": "One Diamond Marketing Mobile Application allows clients to view their details on a mobile app. It boasts seamless integration of Syncfusion Calendar, dynamic charts, JSON to PDF conversion, optimized performance, and robust authentication. Angular Reactive Forms are also implemented. Experience the future of marketing.",
       "imgs": [
         "assets/images/onediamondapp/image1.png",
         "assets/images/onediamondapp/image2.png",
@@ -94,7 +108,7 @@
     },
     {
       "Title": "Pak Foods! (e-commerce website)",
-      "Description": "PakFood, my personal project, is an exciting e-commerce website for food lovers. Explore a curated selection of delicious dishes, including Pakistani cuisine. Enjoy convenient online shopping and order from the comfort of your home. Discover the joy of PakFood today. It has <span class='underline'> &nbsp;Checkout page</span>, <span class='underline'> Proceed Order</span>, <span class='underline'>auth</span>, and <span class='underline'>stripe integration for secure payments.</span>",
+      "Description": "PakFood, my personal project, is an exciting e-commerce website for food lovers. Explore a curated selection of delicious dishes, including Pakistani cuisine. Enjoy convenient online shopping and order from the comfort of your home. Discover the joy of PakFood today. It includes a <span class='underline'>&nbsp;Checkout page</span>, <span class='underline'>Proceed Order</span>, <span class='underline'>auth</span>, and <span class='underline'>stripe integration for secure payments.</span>",
       "imgs": [
         "assets/images/ecommerce/image1.png",
         "assets/images/ecommerce/image2.png",
@@ -111,8 +125,8 @@
       ]
     },
     {
-      "Title": "Multi-Tasker(Mobile App)",
-      "Description": "This platform will offer a solution for the tradesmen with their next task without any difficulty  or waiting for their next project, as the tradesmen also want the shortest possible delay in between their services. The tradesmen's dilemma of not having to work for a company where they are  given a salary but are still required to work is likewise resolved by doing this. It has <span class='underline'> report, </span>, <span class='underline'> &nbsp;order history</span>, <span class='underline'> Post Task</span>, <span class='underline'>auth</span>, and <span class='underline'>stripe integration for secure payments.</span>",
+      "Title": "Multi-Tasker (Mobile App)",
+      "Description": "This platform offers a solution for tradesmen, enabling them to find their next task without difficulty or waiting for their next project. It resolves the dilemma of tradesmen who prefer not to work for a company where they receive a salary but are still required to work. It includes features like <span class='underline'>report</span>, <span class='underline'>&nbsp;order history</span>, <span class='underline'>Post Task</span>, <span class='underline'>auth</span>, and <span class='underline'>stripe integration for secure payments.</span>",
       "imgs": [
         "assets/images/multitasker/image1.jpg",
         "assets/images/multitasker/image2.jpg",
@@ -129,8 +143,8 @@
       ]
     },
     {
-      "Title": " Multi-Tasker- Admin-Panel",
-      "Description": " This is the admin panel for the multi-tasker application.  These features empower administrators to efficiently manage users, tasks, payments, support, and platform security.This is updated with <span class='underline'><user management</span>, <span class='underline'>reporting and analytics</span>, <span class='underline'>payment management</span>, <span class='underline'> security and permissions</span>, <span class='underline'>dashboard</span>, <span class='underline'>review and rating management</span>, <span class='underline'>task filtering</span>.",
+      "Title": "Multi-Tasker - Admin Panel",
+      "Description": "This admin panel for the multi-tasker application empowers administrators to efficiently manage users, tasks, payments, support, and platform security. It includes features such as <span class='underline'>user management</span>, <span class='underline'>reporting and analytics</span>, <span class='underline'>payment management</span>, <span class='underline'>security and permissions</span>, <span class='underline'>dashboard</span>, and <span class='underline'>review and rating management</span>.",
       "imgs": [
         "assets/images/mt-admin-panel/image1.jpg",
         "assets/images/mt-admin-panel/image2.jpg",
@@ -149,12 +163,12 @@
   "OtherProjects.Title": "More personal projects",
   "OtherProjects.Projects": [
     {
-      "Title": "For more personal projects visit my github",
+      "Title": "For more personal projects, visit my GitHub",
       "Description": "",
       "ghLink": "https://github.com/burhanrepos"
-
     }
   ],
+  "Skills":["Angular, ReactJS, NextJS","Flutter, React-Native","JavaScript, TypeScript","Bootstrap, Material","RxJS, NgRx, Redux","Syncfusion Integration","HTML & (S)CSS","Python","Stripe Integration","Google Pay","Apple Pay","Paypal"],
   "Contact.Pretitle": "What’s Next",
   "Contact.Title": "Get in touch!",
   "Contact.Content": "I will be happy to receive your contact if you want to talk about new opportunities. Write me, and I will reply as soon as I see your message. Simple one-page design that features a profile letter with basic information about a person.",

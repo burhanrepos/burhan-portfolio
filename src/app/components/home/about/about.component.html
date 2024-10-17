@@ -12,17 +12,9 @@
                         <p *ngFor='let text of "AboutMe.Paragraphs" | translate' [innerHTML]="text" data-aos="fade-up" data-aos-duration="1000">
                         </p>
                         <ul class="skills-list" data-aos="fade-up">
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Angular, React </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Flutter, React-Native </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">JavaScript, TypeScript </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Bootstrap, Material</span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">RxJS</span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Syncfusion Integration</span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">HTML &amp; (S)CSS </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Python </span></li>
-                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000"><span class="underline">Stripe Integration </span></li>
-
-
+                            <li class="skill-element" data-aos="fade-up" data-aos-duration="1000" *ngFor='let skill of "Skills" | translate; let i = index'>
+                                <span class="underline">{{skill}}</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
