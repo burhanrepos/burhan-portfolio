@@ -4,9 +4,10 @@ import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
 import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
-  selector: 'app-more-projects',
-  templateUrl: './more-projects.component.html',
-  styleUrls: ['./more-projects.component.scss']
+    selector: 'app-more-projects',
+    templateUrl: './more-projects.component.html',
+    styleUrls: ['./more-projects.component.scss'],
+    standalone: false
 })
 export class MoreProjectsComponent implements OnInit {
 

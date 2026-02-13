@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from 'src/app/services/analytics/analytics.service';
 
 @Component({
-  selector: 'app-jobs',
-  templateUrl: './jobs.component.html',
-  styleUrls: ['./jobs.component.scss']
+    selector: 'app-jobs',
+    templateUrl: './jobs.component.html',
+    styleUrls: ['./jobs.component.scss'],
+    standalone: false
 })
 export class JobsComponent implements OnInit {
   
