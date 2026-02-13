@@ -13,16 +13,22 @@ import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
-export function HttpLoaderFactory(http: HttpClient){
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+export function HttpLoaderFactory() {
+  return provideTranslateHttpLoader({
+    prefix: '../../assets/i18n/',
+    suffix: '.json'
+  });
 }
 
-@NgModule({ declarations: [
+@NgModule({
+    declarations: [
         AppComponent,
         /* ArchiveComponent */
     ],
-    bootstrap: [AppComponent], imports: [BrowserAnimationsModule,
+    imports: [
+        BrowserAnimationsModule,
         HomeModule,
         GeneralModule,
         // AnimateOnScrollModule.forRoot(),
@@ -36,5 +42,9 @@ export function HttpLoaderFactory(http: HttpClient){
                 useFactory: HttpLoaderFactory,
                 deps: [HttpClient]
             }
-        })], providers: [TranslateService, provideHttpClient(withInterceptorsFromDi())] })
+        })
+    ],
+    providers: [TranslateService, provideHttpClient(withInterceptorsFromDi())],
+    bootstrap: [AppComponent]
+})
 export class AppModule { }

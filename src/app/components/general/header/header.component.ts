@@ -52,7 +52,6 @@ export class HeaderComponent implements OnInit {
 
   scroll(el:any) {
     if(document.getElementById(el)) {
-      console.log("Current ROute=========",el);
       
       document.getElementById(el)!.scrollIntoView({behavior: 'smooth'});
     } else{
@@ -64,7 +63,6 @@ export class HeaderComponent implements OnInit {
   downloadCV(){
     this.languageService.translateService.get("Header.cvName").subscribe((val:any) => {
       this.cvName = val
-      console.log(val)
       // app url
       let url = window.location.href;
 

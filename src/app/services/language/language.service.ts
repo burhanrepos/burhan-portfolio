@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Location } from '@angular/common';
+import translationsEN from '../../../assets/i18n/en.json';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class LanguageService {
   ) {}
 
   initLanguage(){
+    this.translateService.setTranslation('en', translationsEN);
     this.translateService.addLangs(["en", "es"])
     let language = navigator.language || (navigator as any).userLanguage;
     language = "en"

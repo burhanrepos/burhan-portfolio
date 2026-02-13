@@ -22,7 +22,6 @@ export class MoreProjectsComponent implements OnInit {
     ngOnInit() {
 
       this.languageService.translateService.get("OtherProjects.Projects").subscribe((val:any) => {
-        console.log("OtherProjects.Projects==========",val);
         this.otherProjects=val;
         
         })

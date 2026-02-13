@@ -1,4 +1,4 @@
-@import "./../../../../variables.scss";
+@use "./../../../../variables" as *;
 .main-navbar {
     height: 70px;
     background: $Navy;
@@ -209,3 +209,6 @@
     }
 }
 
+::ng-deep .navbar-nav{
+    flex-direction: row !important;
+}

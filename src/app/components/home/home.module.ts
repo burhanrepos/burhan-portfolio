@@ -11,10 +11,13 @@ import { MoreProjectsComponent } from './more-projects/more-projects.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { NgbModule, NgbNav, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
-export function HttpLoaderFactory(http: HttpClient){
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+export function HttpLoaderFactory() {
+  return provideTranslateHttpLoader({
+    prefix: './assets/i18n/',
+    suffix: '.json'
+  });
 }
 
 
