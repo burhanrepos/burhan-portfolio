@@ -46,6 +46,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/burhan-portfolio/",
               "budgets": [
                 {
                   "type": "initial",
