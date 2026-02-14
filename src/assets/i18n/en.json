@@ -5,16 +5,16 @@
   "Header.Item4": "Contact",
   "Header.cvBtn": "Resume",
   "Header.cvName": "burhan_resume.pdf",
-  "Banner.candidateName":"Burhan Shaheen",
-  "Banner.jobTitle":"Full Stack Engineer",
+  "Banner.candidateName": "Burhan Shaheen",
+  "Banner.jobTitle": "Senior Full Stack Engineer",
   "Banner.Pretitle": "Hello! My name is",
- "Banner.Description": "I possess <span class='underline'>extensive hands-on experience</span> as a website and mobile app developer, specializing in <span class='underline'>Angular, Flutter, React, React Native, and Next.js</span>. I excel at crafting clean, scalable code and developing robust systems and intuitive interfaces that enhance user experience. My commitment to industry best practices ensures the creation of <span class='underline'>reusable and maintainable code</span>. Passionate about optimizing digital solutions, I consistently deliver exceptional results that push the boundaries of innovation.",
- "Banner.ActionBtn": "Get in touch",
+  "Banner.Description": "I am a <span class='underline'>Senior Frontend & Full Stack Engineer</span> with <span class='underline'>4+ years of experience</span> building scalable web and mobile applications. I specialize in <span class='underline'>Angular, Next.js, NgRx, Node.js, and TypeScript</span>. Expert in <span class='underline'>state management, Facade Pattern architecture, and RxJS</span>. I excel at crafting clean, scalable code and developing robust systems with intuitive interfaces. My commitment to industry best practices ensures the creation of <span class='underline'>reusable and maintainable code</span>. Passionate about optimizing digital solutions and integrating AI-powered workflows, I consistently deliver exceptional results that push the boundaries of innovation.",
+  "Banner.ActionBtn": "Get in touch",
   "AboutMe.Title": "About me",
   "AboutMe.Paragraphs": [
-    "As a developer, I am committed to continuous improvement. I excel in <span class='underline'>performing continuous integration</span> and covering frontend developer roles with <span class='underline'>Angular, Flutter, React, React Native, and Next.js</span>. I am part of a team that values empathy, motivation, and collaboration to set plans and goals together.",
-    "My skills include implementing system improvements, optimizing sites, standardizing patterns, and executing ideas that add value to the projects I'm involved in.",
-    "Some of the technologies I have trained and worked on include (but are not limited to):"
+    "As a Senior Frontend Engineer, I am committed to continuous improvement and delivering production-grade solutions. I excel in designing scalable frontend architecture using <span class='underline'>Angular, Next.js, NgRx, and TypeScript</span>. I am part of a team that values empathy, motivation, and collaboration to set plans and goals together.",
+    "My expertise includes implementing NgRx Store with Facade Pattern, managing complex application state with RxJS, building Reactive Forms, optimizing performance through lazy loading, and integrating AI-based workflows. I have proven experience in product-based eCommerce environments and Agile development methodologies.",
+    "Some of the technologies and practices I have trained and worked on include (but are not limited to):"
   ],
   "Experience.Title": "Experience",
   "Experience.Jobs": [
@@ -23,45 +23,43 @@
       "Title": "Full Stack Engineer",
       "Date": "May 2024 - Present",
       "Description": [
-        "Working as a Full Stack Engineer at Upstart Commerce, focusing on both frontend and backend development.",
-        "Developing and maintaining web applications using Next.js, ensuring high performance and responsiveness.",
-        "Collaborating with cross-functional teams to define, design, and ship new features.",
-        "Integrating with third-party APIs and implementing user authentication for secure access.",
-        "Conducting code reviews and contributing to a culture of continuous improvement."
+        "Working in a product-based eCommerce environment, contributing to scalable and production-grade web applications.",
+        "Developing and enhancing frontend architecture using Angular, Next.js, and TypeScript.",
+        "Implementing NgRx Store with Facade Pattern to manage complex product state and improve maintainability.",
+        "Building reusable, modular components and optimizing performance using RxJS and lazy loading.",
+        "Integrating AI-based workflows to enable dynamic product attribute generation through internal product APIs.",
+        "Designing and consuming RESTful APIs using Node.js and Express.",
+        "Automating data collection and processing using Node.js and Python scripts.",
+        "Collaborating closely with backend, product, and stakeholder teams in Agile sprints.",
+        "Working with Docker for local containerized development environments."
       ]
     },
     {
-      "Tab": "Envysol",
-      "Title": "Frontend Developer",
+      "Tab": "ASM Associates",
+      "Title": "Frontend Angular Developer (Lead)",
       "Date": "Feb 2023 - Aug 2024",
       "Description": [
-        "<span class='underline'>Remote Frontend Developer at ASM Tech Office</span>",
-        "Developed and maintained a web-based application for a Tax Office using Angular, resulting in improved user experience and increased performance.",
-        "Integrated RESTful APIs of NestJS to support multiple applications, using Angular for frontend development.",
-        "Built a real-time chat application using WebSockets and Angular, enhancing communication and collaboration among team members.",
-        "Implemented continuous integration and daily backups.",
-        "Successfully led the development of two frontend projects for the Tax Office platform, utilizing Angular and Angular Material.",
-        "Conducted planning meetings and generated reports."
+        "Led development of a Tax Filing System enabling users to view returns, add documents, and manage notifications.",
+        "Designed and implemented the complete frontend architecture using Angular and Angular Material.",
+        "Built complex Reactive Forms with dynamic form arrays, validations, and structured data workflows.",
+        "Managed asynchronous operations and application state using RxJS.",
+        "Developed reusable services and modular components to ensure scalability and maintainability.",
+        "Integrated REST APIs with centralized error handling, interceptors, and optimized API communication.",
+        "Delivered a fully functional, production-ready system aligned with business requirements."
       ]
     },
     {
-      "Tab": "Z-Axis",
-      "Title": "Frontend Engineer",
-      "Date": "April 2022 - Feb 2023",
+      "Tab": "Trillo Inc.",
+      "Title": "Angular / Flutter Developer",
+      "Date": "April 2022 - Jan 2023",
       "Description": [
-        "<span class='underline'>Remote Frontend Engineer at Trillo Inc</span>",
-        "<span class='underline'>Angular Developer</span>",
-        "Created user-friendly and responsive web pages using HTML, CSS, and Bootstrap.",
-        "Utilized UI design tools such as Figma.",
-        "Built reusable code for future use.",
-        "Gathered feedback and built solutions for users and customers.",
-        "Optimized web pages for maximum speed and scalability.",
-        "<span class='underline'>Flutter Developer</span>",
-        "Developed Android and iOS mobile applications.",
-        "Optimized UI for various mobile device sizes.",
-        "Integrated 3D models.",
-        "Integrated APIs and Micro-Services.",
-        "Designed ergonomic and user-friendly UI."
+        "Worked in a project-based software development environment delivering multiple client projects.",
+        "Led Angular frontend development across various web applications with REST API integrations.",
+        "Developed cross-platform mobile applications using Flutter for Android and iOS.",
+        "Integrated AI chatbot functionality into web and mobile applications.",
+        "Implemented Augmented Reality features to enhance interactive user experiences.",
+        "Customized enterprise components such as Syncfusion calendar for client-specific scheduling systems.",
+        "Delivered client-focused solutions with optimized performance and responsive UI design."
       ]
     },
     {
@@ -168,9 +166,22 @@
       "ghLink": "https://github.com/burhanrepos"
     }
   ],
-  "Skills":["Angular, ReactJS, NextJS","Flutter, React-Native","JavaScript, TypeScript","Bootstrap, Material","RxJS, NgRx, Redux","Syncfusion Integration","HTML & (S)CSS","Python","Stripe Integration","Google Pay","Apple Pay","Paypal"],
-  "Contact.Pretitle": "What’s Next",
+  "Skills": [
+    "Angular & Angular Material",
+    "Next.js & React.js",
+    "NgRx (Store, Effects, Facade Pattern)",
+    "TypeScript & JavaScript (ES6+)",
+    "RxJS & Reactive Forms",
+    "Node.js & Express.js",
+    "REST API Integration & Design",
+    "Firebase & MongoDB",
+    "Flutter & React Native",
+    "Docker & CI/CD",
+    "AI Integration & Agent-based APIs",
+    "State Management & Architecture Patterns"
+  ],
+  "Contact.Pretitle": "What's Next",
   "Contact.Title": "Get in touch!",
-  "Contact.Content": "I will be happy to receive your contact if you want to talk about new opportunities. Write me, and I will reply as soon as I see your message. Simple one-page design that features a profile letter with basic information about a person.",
+  "Contact.Content": "I will be happy to receive your contact if you want to talk about new opportunities. Write me, and I will reply as soon as I see your message. Let's discuss how I can contribute to your next project with my expertise in full-stack development and cutting-edge technologies.",
   "Contact.Btn": "Say Hello"
 }
