@@ -10,6 +10,7 @@ on:
 
 # Sets permissions for GitHub Pages deployment
 permissions:
+  actions: write
   contents: read
   pages: write
   id-token: write
@@ -46,19 +47,15 @@ jobs:
 
       # Step 5: Remove stale Pages artifacts from this workflow run before uploading a fresh one
       - name: Remove stale Pages artifacts
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api \
-            -H "Accept: application/vnd.github+json" \
-            "/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
-            --jq '.artifacts[] | select(.name=="github-pages") | .id' | while read -r artifact_id; do
-              if [ -n "$artifact_id" ]; then
-                gh api --method DELETE \
-                  -H "Accept: application/vnd.github+json" \
-                  "/repos/${{ github.repository }}/actions/artifacts/$artifact_id"
-              fi
-            done
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const run_id = context.runId;
+            const { data } = await github.rest.actions.listWorkflowRunArtifacts({ owner, repo, run_id });
+            for (const artifact of data.artifacts.filter((artifact) => artifact.name === 'github-pages')) {
+              await github.rest.actions.deleteArtifact({ owner, repo, artifact_id: artifact.id });
+            }
 
       # Step 6: Upload build artifacts for GitHub Pages
       - name: Upload build artifacts
