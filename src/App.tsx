@@ -25,8 +25,7 @@ import {
   ArrowUpRight,
   User,
   Youtube,
-  Book,
-  FileText
+  Book
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Project, Experience, SkillCategory, Handbook, Certification, Achievement } from "./types";
@@ -75,9 +74,7 @@ const PORTFOLIO_DATA = {
       description: "A revolutionary web marketing client boasting seamless Syncfusion Calendar integrations, dynamic real-time charts, automated JSON-to-PDF reports, and robust authentication layers.",
       longDescription: "Crafted on an Angular core incorporating Angular Material UI elements and robust SCSS styling. Leveraged complex RxJS streams to pipe clean asynchronous actions into custom marketing dashboards, enabling clients to schedule, configure, and analyze campaign behaviors instantly.",
       tech: ["Angular", "SCSS", "Angular Material", "RxJS", "Syncfusion Calendar", "Charts.js"],
-      githubUrl: "", // Leave empty if you prefer pointing only to PDF/Live
-      liveUrl: "https://burhanrepos.github.io/burhan-portfolio", // Placeholder for website live preview
-      pdfUrl: "https://burhanrepos.github.io/burhan-portfolio/Burhan-Shaheen-Resume.pdf", // Can link project reports or details
+      githubUrl: "",
       imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
     },
     {
@@ -87,8 +84,6 @@ const PORTFOLIO_DATA = {
       longDescription: "Engineered from a single clean codebase using Flutter and Dart. Integrates highly customized mobile calendar widgets, fast client-side performance, local cache configurations, and robust JWT validation protocols corresponding to backend auth services.",
       tech: ["Flutter", "Dart", "REST APIs", "Syncfusion", "PDF Generator", "JWT Authentication"],
       githubUrl: "",
-      liveUrl: "https://burhanrepos.github.io/burhan-portfolio",
-      pdfUrl: "https://burhanrepos.github.io/burhan-portfolio/Burhan-Shaheen-Resume.pdf",
       imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=600"
     },
     {
@@ -98,8 +93,6 @@ const PORTFOLIO_DATA = {
       longDescription: "A full-stack personal showcase integrating robust Stripe integration for secure credit card payments. Includes user registration flow, order tracking, responsive dynamic cart computations, and a modular Firebase data model linked with Node.js/Express middlewares.",
       tech: ["Angular", "Bootstrap", "Stripe", "Firebase", "NodeJS", "ExpressJS"],
       githubUrl: "https://github.com/burhanrepos",
-      liveUrl: "https://burhanrepos.github.io/burhan-portfolio",
-      pdfUrl: "https://burhanrepos.github.io/burhan-portfolio/Burhan-Shaheen-Resume.pdf",
       imageUrl: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600"
     },
     {
@@ -109,8 +102,6 @@ const PORTFOLIO_DATA = {
       longDescription: "Built with React-Native-CLI and powered by Node.js. Incorporates features like user reviews/ratings, direct secure chat channels, automated stripe escrow payments, comprehensive history tracking, and active geo-alerts.",
       tech: ["React-Native-CLI", "React", "Stripe", "Firebase", "NodeJS", "ExpressJS"],
       githubUrl: "https://github.com/burhanrepos",
-      liveUrl: "https://burhanrepos.github.io/burhan-portfolio",
-      pdfUrl: "https://burhanrepos.github.io/burhan-portfolio/Burhan-Shaheen-Resume.pdf",
       imageUrl: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=600"
     },
     {
@@ -120,8 +111,6 @@ const PORTFOLIO_DATA = {
       longDescription: "Leverages Angular material tables, SCSS animations, and Bootstrap grids. Built to offer support managers clear analytic dashboards, direct action buttons to flag user reviews, audit escrow payments, and update roles and permissions.",
       tech: ["Angular", "SCSS", "Bootstrap", "Material UI", "Firebase", "NodeJS"],
       githubUrl: "https://github.com/burhanrepos",
-      liveUrl: "https://burhanrepos.github.io/burhan-portfolio",
-      pdfUrl: "https://burhanrepos.github.io/burhan-portfolio/Burhan-Shaheen-Resume.pdf",
       imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600"
     }
   ] as Project[],
@@ -132,7 +121,7 @@ const PORTFOLIO_DATA = {
       tech: "Angular, RxJS, NgRx, TypeScript",
       description: "An advanced, production-oriented guide covering NgRx facade patterns, customized RxJS state caching, lazy-loading routes, and unit testing strategies.",
       coverColor: "from-red-600 to-rose-800",
-      githubUrl: "https://github.com/burhanrepos",
+      githubUrl: "https://burhanrepos.github.io/angular-handbook/",
       chaptersCount: 12
     },
     {
@@ -141,16 +130,16 @@ const PORTFOLIO_DATA = {
       tech: "React, Next.js, Next Auth, Server Actions",
       description: "A complete framework reference dissecting App Router behaviors, server-side caching mechanics, middleware filters, and SEO optimization metrics.",
       coverColor: "from-zinc-800 to-black",
-      githubUrl: "https://github.com/burhanrepos",
+      githubUrl: "https://burhanrepos.github.io/nextjs-handbook/",
       chaptersCount: 15
     },
     {
-      id: "nodejs-handbook",
+      id: "node-visual-handbook",
       title: "Node.js & Express API Guide",
       tech: "Node.js, Express, SQL, GraphQL, JWT",
       description: "A step-by-step masterclass in constructing highly modular RESTful and GraphQL backend endpoints, robust JWT authentication layers, and PostgreSQL schema definitions.",
       coverColor: "from-emerald-600 to-teal-800",
-      githubUrl: "https://github.com/burhanrepos",
+      githubUrl: "https://burhanrepos.github.io/node-visual-handbook/",
       chaptersCount: 10
     }
   ] as Handbook[],
@@ -860,47 +849,6 @@ export default function App() {
                       {t}
                     </span>
                   ))}
-                </div>
-
-                {/* Flexible project attachment controls */}
-                <div className="flex items-center justify-between border-t border-zinc-200/5 pt-4">
-                  <div className="flex items-center space-x-3.5">
-                    {p.githubUrl && (
-                      <a
-                        href={p.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-zinc-400 hover:text-white transition-colors"
-                        title="View Codebase"
-                      >
-                        <Github size={18} />
-                      </a>
-                    )}
-                    {p.pdfUrl && (
-                      <a
-                        href={p.pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-zinc-400 hover:text-violet-400 transition-colors flex items-center space-x-1"
-                        title="View Document / CV Details"
-                      >
-                        <FileText size={18} />
-                        <span className="text-[10px] font-semibold">PDF Info</span>
-                      </a>
-                    )}
-                  </div>
-
-                  {p.liveUrl && (
-                    <a
-                      href={p.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-1 text-xs font-semibold text-violet-400 hover:text-violet-300 transition-colors"
-                    >
-                      <span>Launch App</span>
-                      <ExternalLink size={12} />
-                    </a>
-                  )}
                 </div>
               </div>
             </div>
