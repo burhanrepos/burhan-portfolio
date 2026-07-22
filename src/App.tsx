@@ -418,7 +418,10 @@ export default function App() {
             <a href="#certifications" onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold py-2 hover:text-violet-500 border-b border-zinc-200/5">Credentials</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold py-2 hover:text-violet-500 border-b border-zinc-200/5">Contact</a>
             <button
-              onClick={toggleTheme}
+                 onClick={() => {
+                toggleTheme();
+                setMobileMenuOpen(false);
+              }}
               className="flex items-center justify-between text-lg font-semibold py-2 border-b border-zinc-200/5 hover:text-violet-500 transition-colors cursor-pointer"
             >
               <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
