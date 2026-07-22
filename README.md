@@ -1,20 +1,43 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Burhan Shaheen Portfolio
 
-# Run and deploy your AI Studio app
+A modern personal portfolio website built with React, TypeScript, Vite, Tailwind CSS, and Motion. It showcases Burhan Shaheen's experience, featured projects, certifications, and interactive handbooks.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/8baf989c-d837-4ac7-9e71-f4d24d13ec27
+- Responsive portfolio layout
+- Featured projects section
+- Experience and skills sections
+- Certifications and achievements
+- Interactive handbook cards
+- Resume PDF download link
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Motion
+- Lucide React
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+Prerequisites: Node.js 20+
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Start the development server:
    `npm run dev`
+3. Open the local preview URL shown in the terminal
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+The production build is generated in the `dist` folder.
+
+## Deployment
+
+This project is configured for GitHub Pages deployment through GitHub Actions. The workflow builds the Vite app and publishes the static site.
