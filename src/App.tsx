@@ -415,7 +415,7 @@ export default function App() {
 
             <div className="space-y-4">
               <h1 className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight leading-none">
-                Hi, I'm <span className="bg-gradient-to-r from-violet-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">{PORTFOLIO_DATA.personalInfo.name}</span>
+                Hi, I'm <span className="text-violet-400">{PORTFOLIO_DATA.personalInfo.name}</span>
               </h1>
               <h2 className="font-display text-xl sm:text-2xl text-zinc-400 font-medium">
                 Designing scalable web systems & building high-fidelity client environments.
