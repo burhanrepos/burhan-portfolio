@@ -29,6 +29,7 @@ export default function InteractiveHandbooks() {
   // Find the currently active handbook
   const activeBook = HANDBOOK_DETAILS.find((b) => b.id === selectedBookId);
   const currentChapter = activeBook?.chapters[activeChapterIndex];
+  const linkLabel = activeBook?.githubUrl?.includes("github.io") ? "Open Handbook" : "View Source";
 
   // Handle task check/uncheck
   const toggleTask = (bookId: string, chapIndex: number, taskIndex: number) => {
@@ -214,7 +215,7 @@ export default function InteractiveHandbooks() {
                   className="inline-flex items-center space-x-1.5 text-xs font-semibold text-zinc-300 hover:text-white bg-zinc-900 px-3.5 py-2.5 rounded-xl border border-zinc-200/5 transition-colors"
                 >
                   <Github size={14} />
-                  <span>View Source</span>
+                  <span>{linkLabel}</span>
                   <ArrowUpRight size={12} />
                 </a>
               </div>

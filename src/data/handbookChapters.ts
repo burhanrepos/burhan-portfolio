@@ -26,7 +26,7 @@ export const HANDBOOK_DETAILS: HandbookDetails[] = [
     tech: "Angular, RxJS, NgRx, TypeScript",
     description: "An advanced, production-oriented guide covering NgRx facade patterns, customized RxJS state caching, lazy-loading routes, and unit testing strategies.",
     coverColor: "from-red-600 to-rose-800",
-    githubUrl: "https://github.com/burhanrepos",
+    githubUrl: "https://burhanrepos.github.io/angular-handbook/",
     chaptersCount: 3,
     chapters: [
       {
@@ -124,7 +124,7 @@ invalidateAndRefresh() {
     tech: "React, Next.js, Next Auth, Server Actions",
     description: "A complete framework reference dissecting App Router behaviors, server-side caching mechanics, middleware filters, and SEO optimization metrics.",
     coverColor: "from-zinc-800 to-black",
-    githubUrl: "https://github.com/burhanrepos",
+    githubUrl: "https://burhanrepos.github.io/nextjs-handbook/",
     chaptersCount: 3,
     chapters: [
       {
@@ -224,7 +224,7 @@ async function handleAdd() {
     tech: "Node.js, Express, SQL, GraphQL, JWT",
     description: "A step-by-step masterclass in constructing highly modular RESTful and GraphQL backend endpoints, robust JWT authentication layers, and PostgreSQL schema definitions.",
     coverColor: "from-emerald-600 to-teal-800",
-    githubUrl: "https://github.com/burhanrepos",
+    githubUrl: "https://burhanrepos.github.io/node-visual-handbook/",
     chaptersCount: 3,
     chapters: [
       {
@@ -322,6 +322,176 @@ try {
           "Always call client.release() in a finally block to prevent connection leaks",
           "Use the SELECT ... FOR UPDATE statement to locks records under write scenarios",
           "Verify balance conditions server-side, never trusting client computations"
+        ]
+      }
+    ]
+  },
+  {
+    id: "database-design-handbook",
+    title: "Database Design Handbook",
+    tech: "SQL, PostgreSQL, Data Modeling, Indexing",
+    description: "A practical handbook covering normalization, indexing, query planning, and scalable schema strategies for modern applications.",
+    coverColor: "from-sky-700 to-cyan-900",
+    githubUrl: "https://burhanrepos.github.io/database-design-handbook/",
+    chaptersCount: 3,
+    chapters: [
+      {
+        title: "1. Modeling Reality Without Redundancy",
+        subtitle: "Designing normalized entities and relationships",
+        takeaway: "Good schemas mirror business rules and reduce update anomalies.",
+        codeLanguage: "sql",
+        codeSnippet: `CREATE TABLE customers (
+  id BIGSERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE orders (
+  id BIGSERIAL PRIMARY KEY,
+  customer_id BIGINT NOT NULL REFERENCES customers(id),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);`,
+        content: [
+          "Database design starts by separating concerns between entities, their attributes, and the relationships that connect them.",
+          "Normalization reduces duplication, making data easier to maintain and less susceptible to conflicting updates.",
+          "A scalable schema still leaves room for future growth through careful constraints and clear ownership boundaries."
+        ],
+        checklist: [
+          "Identify entities before adding columns",
+          "Use foreign keys to preserve relationship integrity",
+          "Avoid storing derived values in base tables"
+        ]
+      },
+      {
+        title: "2. Indexing for Read Performance",
+        subtitle: "Choosing the right indexes for selective workloads",
+        takeaway: "Indexing should be purposeful; too many indexes can slow writes and bloat storage.",
+        codeLanguage: "sql",
+        codeSnippet: `CREATE INDEX idx_orders_customer_id
+ON orders (customer_id);
+
+CREATE INDEX idx_orders_created_at
+ON orders (created_at DESC);`,
+        content: [
+          "Indexes accelerate read-heavy lookups, but they add overhead to inserts, updates, and deletes.",
+          "The best indexing strategy depends on query patterns, selectivity, and the balance between read speed and write cost.",
+          "Composite indexes are especially effective when filters and sorts share a predictable column order."
+        ],
+        checklist: [
+          "Review slow query plans before adding indexes",
+          "Prefer composite indexes for multi-column filters",
+          "Monitor write amplification after index changes"
+        ]
+      },
+      {
+        title: "3. Transactions and Concurrency",
+        subtitle: "Keeping data safe during parallel writes",
+        takeaway: "Transactions preserve consistency when multiple users modify the same records at once.",
+        codeLanguage: "sql",
+        codeSnippet: `BEGIN;
+
+UPDATE accounts
+SET balance = balance - 100
+WHERE id = 42;
+
+UPDATE accounts
+SET balance = balance + 100
+WHERE id = 99;
+
+COMMIT;`,
+        content: [
+          "Transactions bundle multiple statements into one atomic unit so failures cannot leave the system half-updated.",
+          "Concurrency control ensures that competing writers do not silently overwrite each other's changes.",
+          "Proper isolation levels and row locking protect critical workflows such as payments and inventory updates."
+        ],
+        checklist: [
+          "Wrap related mutations inside a transaction",
+          "Use the right isolation level for the workload",
+          "Test rollback paths under contention"
+        ]
+      }
+    ]
+  },
+  {
+    id: "react-deep-dive-handbook",
+    title: "React Deep Dive Handbook",
+    tech: "React, Hooks, Performance, State",
+    description: "A deep dive into component composition, rendering performance, hooks, and state management patterns in modern React.",
+    coverColor: "from-indigo-700 to-violet-900",
+    githubUrl: "https://burhanrepos.github.io/react-deep-dive-handbook/",
+    chaptersCount: 3,
+    chapters: [
+      {
+        title: "1. Composition Over Deep Prop Trees",
+        subtitle: "Building resilient UI boundaries with small, purposeful components",
+        takeaway: "Composable components reduce complexity and make feature changes much safer.",
+        codeLanguage: "typescript",
+        codeSnippet: `function Dashboard({ user }) {
+  return (
+    <Panel>
+      <ProfileHeader user={user} />
+      <ActivityFeed userId={user.id} />
+    </Panel>
+  );
+}`,
+        content: [
+          "React applications become easier to maintain when data flows through explicit boundaries instead of deep prop drilling.",
+          "Small components establish clear responsibilities and can be reused across multiple screens without accidental coupling.",
+          "Layered composition also makes it simpler to reason about updates, tests, and future refactors."
+        ],
+        checklist: [
+          "Split large screens into focused components",
+          "Keep props minimal and domain-specific",
+          "Prefer composition over inheritance-like patterns"
+        ]
+      },
+      {
+        title: "2. Understanding Re-render Costs",
+        subtitle: "Using memoization and stable references with care",
+        takeaway: "Avoid premature optimization, but measure slow renders when the UI becomes noisy.",
+        codeLanguage: "typescript",
+        codeSnippet: `const Child = memo(function Child({ value }) {
+  return <div>{value}</div>;
+});
+
+const parentValue = useMemo(() => ({ count }), [count]);`,
+        content: [
+          "Re-rendering is not always a problem, but unnecessary renders can become expensive in large component trees.",
+          "Memoization helps when referential stability matters, especially with expensive children or heavy lists.",
+          "The best results come from measuring real bottlenecks rather than applying memoization everywhere by default."
+        ],
+        checklist: [
+          "Profile renders before introducing memoization",
+          "Use memo only where identity changes matter",
+          "Keep dependencies tight and predictable"
+        ]
+      },
+      {
+        title: "3. Hooks and Side-Effect Discipline",
+        subtitle: "Keeping effects predictable and reusable",
+        takeaway: "Hooks shine when side effects are organized around clear lifecycle boundaries.",
+        codeLanguage: "typescript",
+        codeSnippet: `function useWindowSize() {
+  const [size, setSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const handleResize = () => setSize({ width: window.innerWidth, height: window.innerHeight });
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return size;
+}`,
+        content: [
+          "Hooks encourage reusable logic, but effects should still be kept predictable and scoped to a single concern.",
+          "Cleanup functions and dependency arrays are the difference between a robust hook and a subtle state leak.",
+          "Separation of concerns becomes much easier when hooks encapsulate one bit of behavior at a time."
+        ],
+        checklist: [
+          "Keep effects focused on one responsibility",
+          "Return cleanup logic for listeners and subscriptions",
+          "Treat dependency arrays as a correctness contract"
         ]
       }
     ]
