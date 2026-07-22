@@ -244,6 +244,15 @@ export default function App() {
   // Experience Details expand states
   const [expandedJob, setExpandedJob] = useState<string | null>("Scala Teams LLC");
 
+  // Color theme (light / dark). Initial value comes from the inline script in
+  // index.html, which has already set the class on <html> before first paint.
+  const [theme, setTheme] = useState<"light" | "dark">(() =>
+    typeof document !== "undefined" &&
+    document.documentElement.classList.contains("light")
+      ? "light"
+      : "dark"
+  );
+
   // Form submit state
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [formError, setFormError] = useState<string>("");
@@ -254,12 +263,20 @@ export default function App() {
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-  // Update theme class on HTML element to be strictly dark
+  // Keep the <html> class and localStorage in sync with the selected theme
   useEffect(() => {
     const root = window.document.documentElement;
-    root.classList.add("dark");
-    root.classList.remove("light");
-  }, []);
+    root.classList.remove("light", "dark");
+    root.classList.add(theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch {
+      // Ignore storage errors (e.g. private mode)
+    }
+  }, [theme]);
+
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   useEffect(() => {
     if (publicKey) {
@@ -349,7 +366,17 @@ export default function App() {
           </nav>
 
           {/* Resume and Menu controls */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
+            {/* Theme toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2.5 rounded-xl border border-zinc-200/10 text-zinc-400 hover:text-violet-500 hover:border-violet-500/30 transition-all cursor-pointer"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+
             {/* Resume Call-to-action */}
             <a
               href={PORTFOLIO_DATA.socialLinks.resumePdf}
@@ -390,6 +417,13 @@ export default function App() {
             <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold py-2 hover:text-violet-500 border-b border-zinc-200/5">Projects</a>
             <a href="#certifications" onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold py-2 hover:text-violet-500 border-b border-zinc-200/5">Credentials</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold py-2 hover:text-violet-500 border-b border-zinc-200/5">Contact</a>
+            <button
+              onClick={toggleTheme}
+              className="flex items-center justify-between text-lg font-semibold py-2 border-b border-zinc-200/5 hover:text-violet-500 transition-colors cursor-pointer"
+            >
+              <span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
             <a
               href={PORTFOLIO_DATA.socialLinks.resumePdf}
               target="_blank"
@@ -441,7 +475,7 @@ export default function App() {
                 href={PORTFOLIO_DATA.socialLinks.resumePdf}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 bg-zinc-900 dark:bg-zinc-900 light:bg-zinc-200 text-zinc-100 dark:text-zinc-100 light:text-zinc-900 border border-zinc-800 px-6 py-3.5 rounded-xl font-semibold transition-all hover:border-violet-500/30"
+                className="inline-flex items-center space-x-2 bg-zinc-900 text-zinc-100 border border-zinc-800 px-6 py-3.5 rounded-xl font-semibold transition-all hover:border-violet-500/30"
               >
                 <Download size={16} />
                 <span>Download Resume (PDF)</span>
@@ -680,7 +714,7 @@ export default function App() {
                     {cat.skills.map((skill, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1.5 bg-zinc-905 dark:bg-zinc-900 light:bg-zinc-200 border border-zinc-200/5 text-zinc-300 dark:text-zinc-300 light:text-zinc-800 text-xs rounded-lg font-medium hover:border-violet-500/30 hover:text-violet-400 transition-colors"
+                        className="px-3 py-1.5 bg-zinc-900 border border-zinc-200/5 text-zinc-300 text-xs rounded-lg font-medium hover:border-violet-500/30 hover:text-violet-400 transition-colors"
                       >
                         {skill}
                       </span>
@@ -855,12 +889,12 @@ export default function App() {
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
-                  
-                  {/* Category overlay tags */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+                  {/* Category overlay tags (sit on the image, so kept dark in both themes) */}
                   <div className="absolute top-4 right-4 flex gap-1.5">
                     {p.tech.slice(0, 2).map((t, idx) => (
-                      <span key={idx} className="bg-zinc-900/80 border border-white/10 px-2.5 py-1 rounded-md text-[10px] font-semibold text-white tracking-wide">
+                      <span key={idx} className="bg-black/60 border border-white/15 px-2.5 py-1 rounded-md text-[10px] font-semibold text-white tracking-wide">
                         {t}
                       </span>
                     ))}

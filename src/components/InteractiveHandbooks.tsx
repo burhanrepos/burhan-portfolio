@@ -116,7 +116,7 @@ export default function InteractiveHandbooks() {
                         </h4>
                         <div className="flex flex-wrap gap-1.5 pt-1">
                           {book.tech.split(",").slice(0, 2).map((t, idx) => (
-                            <span key={idx} className="text-[9px] font-mono text-zinc-100 bg-white/10 border border-white/10 px-2 py-0.5 rounded-md">
+                            <span key={idx} className="text-[9px] font-mono text-white bg-white/10 border border-white/10 px-2 py-0.5 rounded-md">
                               {t.trim()}
                             </span>
                           ))}
@@ -198,7 +198,7 @@ export default function InteractiveHandbooks() {
               <button
                 onClick={() => setSelectedBookId(null)}
                 id="back-to-library-btn"
-                className="inline-flex items-center space-x-2 text-xs font-semibold text-zinc-400 hover:text-white bg-zinc-900 hover:bg-zinc-850 px-4 py-2.5 rounded-xl border border-zinc-200/5 transition-all cursor-pointer"
+                className="inline-flex items-center space-x-2 text-xs font-semibold text-zinc-400 hover:text-zinc-100 bg-zinc-900 hover:bg-zinc-800 px-4 py-2.5 rounded-xl border border-zinc-200/5 transition-all cursor-pointer"
               >
                 <ArrowLeft size={14} />
                 <span>Back to Manuals Gallery</span>
@@ -212,7 +212,7 @@ export default function InteractiveHandbooks() {
                   href={activeBook.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-1.5 text-xs font-semibold text-zinc-300 hover:text-white bg-zinc-900 px-3.5 py-2.5 rounded-xl border border-zinc-200/5 transition-colors"
+                  className="inline-flex items-center space-x-1.5 text-xs font-semibold text-zinc-300 hover:text-zinc-100 bg-zinc-900 px-3.5 py-2.5 rounded-xl border border-zinc-200/5 transition-colors"
                 >
                   <Github size={14} />
                   <span>{linkLabel}</span>
@@ -234,7 +234,7 @@ export default function InteractiveHandbooks() {
                     {/* Book Cover Face */}
                     <div className={`absolute inset-0 rounded-r-xl bg-gradient-to-br ${activeBook.coverColor} p-6 flex flex-col justify-between overflow-hidden shadow-inner`}>
                       {/* Inner Paper Page stacks visual borders */}
-                      <div className="absolute right-0 top-2 bottom-2 w-1.5 bg-zinc-200/90 rounded-r shadow-sm border-l border-zinc-300" />
+                      <div className="absolute right-0 top-2 bottom-2 w-1.5 bg-white/90 rounded-r shadow-sm border-l border-white/40" />
                       
                       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none" />
 
@@ -247,7 +247,7 @@ export default function InteractiveHandbooks() {
                         <h4 className="font-display font-extrabold text-white text-base tracking-tight leading-snug drop-shadow">
                           {activeBook.title}
                         </h4>
-                        <p className="text-[10px] text-zinc-300 font-mono uppercase tracking-widest">
+                        <p className="text-[10px] text-white/70 font-mono uppercase tracking-widest">
                           Burhan Shaheen
                         </p>
                       </div>
@@ -372,7 +372,7 @@ export default function InteractiveHandbooks() {
                         </span>
                         <button
                           onClick={() => handleCopyCode(currentChapter.codeSnippet)}
-                          className="p-1.5 hover:bg-zinc-800 text-zinc-400 hover:text-white rounded-lg transition-colors cursor-pointer"
+                          className="p-1.5 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-100 rounded-lg transition-colors cursor-pointer"
                           title="Copy Code Snippet"
                         >
                           {copied ? (
@@ -445,7 +445,7 @@ export default function InteractiveHandbooks() {
                   <button
                     onClick={() => setActiveChapterIndex((p) => Math.max(0, p - 1))}
                     disabled={activeChapterIndex === 0}
-                    className="inline-flex items-center space-x-1.5 text-xs font-semibold text-zinc-400 hover:text-white disabled:opacity-30 disabled:hover:text-zinc-400 disabled:pointer-events-none transition-colors"
+                    className="inline-flex items-center space-x-1.5 text-xs font-semibold text-zinc-400 hover:text-zinc-100 disabled:opacity-30 disabled:hover:text-zinc-400 disabled:pointer-events-none transition-colors"
                   >
                     <ChevronLeft size={16} />
                     <span>Previous Unit</span>

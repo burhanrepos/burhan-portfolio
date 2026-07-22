@@ -2,6 +2,49 @@
 
 @variant dark (&:where(.dark, .dark *));
 
+/* ==========================================================================
+   THEMING
+   The design was authored dark-first with hardcoded `zinc-*` utilities.
+   Tailwind v4 compiles those to `var(--color-zinc-*)`, so we re-theme the
+   whole app for light mode by re-mapping the zinc scale within `.light`
+   (an inversion of the neutral ramp). Accent colors (violet/indigo/emerald/
+   red) reference their own variables and are intentionally left untouched.
+   Anything that must stay light-on-dark regardless of theme (book covers,
+   image overlays) uses fixed colors like white/neutral in the markup.
+   ========================================================================== */
+:root.dark {
+  color-scheme: dark;
+}
+
+:root.light {
+  color-scheme: light;
+
+  --color-zinc-50: #09090b;
+  --color-zinc-100: #18181b;
+  --color-zinc-200: #27272a;
+  --color-zinc-300: #3f3f46;
+  --color-zinc-400: #52525b;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #a1a1aa;
+  --color-zinc-700: #d4d4d8;
+  --color-zinc-800: #e4e4e7;
+  --color-zinc-900: #f4f4f5;
+  --color-zinc-950: #fafafa;
+
+  /* Accent text/icon shades are too pale on a light background. These `-400`
+     shades (and violet's `-200`/`-300`) are used almost exclusively for text
+     and icons, so we deepen them here for readable contrast on white.
+     Backgrounds, borders and gradients use `-500`/`-600`/`-700`, which we
+     leave untouched so the brand tints keep their look. */
+  --color-violet-200: #5b21b6;
+  --color-violet-300: #7c3aed;
+  --color-violet-400: #6d28d9;
+  --color-indigo-400: #4f46e5;
+  --color-purple-400: #9333ea;
+  --color-teal-400: #0d9488;
+  --color-emerald-400: #047857;
+}
+
 @theme {
   --font-sans: "Inter", sans-serif;
   --font-display: "Plus Jakarta Sans", sans-serif;

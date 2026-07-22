@@ -123,7 +123,7 @@ invalidateAndRefresh() {
     title: "Next.js Deep-Dive Blueprint",
     tech: "React, Next.js, Next Auth, Server Actions",
     description: "A complete framework reference dissecting App Router behaviors, server-side caching mechanics, middleware filters, and SEO optimization metrics.",
-    coverColor: "from-zinc-800 to-black",
+    coverColor: "from-neutral-800 to-neutral-950",
     githubUrl: "https://burhanrepos.github.io/nextjs-handbook/",
     chaptersCount: 3,
     chapters: [
