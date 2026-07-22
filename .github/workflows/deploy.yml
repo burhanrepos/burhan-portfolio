@@ -1,9 +1,10 @@
 name: Deploy Vite Portfolio to GitHub Pages
 
-# Trigger the workflow on push to master branch
+# Trigger the workflow on push to the main branch and the legacy master branch
 on:
   push:
     branches:
+      - main
       - master
   # Allow manual trigger from Actions tab
   workflow_dispatch:
@@ -43,6 +44,10 @@ jobs:
 
       # Step 4: Build the Vite project for production
       - name: Build Vite project
+        env:
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
         run: npm run build -- --base=/burhan-portfolio/
 
       # Step 5: Remove stale Pages artifacts from this workflow run before uploading a fresh one

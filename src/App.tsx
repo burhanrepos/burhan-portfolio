@@ -1,4 +1,5 @@
 import { useState, useEffect, FormEvent } from "react";
+import emailjs from "emailjs-com";
 import {
   Github,
   Linkedin,
@@ -245,7 +246,13 @@ export default function App() {
 
   // Form submit state
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [formError, setFormError] = useState<string>("");
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   // Update theme class on HTML element to be strictly dark
   useEffect(() => {
@@ -254,14 +261,48 @@ export default function App() {
     root.classList.remove("light");
   }, []);
 
-  const handleContactSubmit = (e: FormEvent) => {
+  useEffect(() => {
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
+  }, [publicKey]);
+
+  const handleContactSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
+
+    setFormError("");
+    setIsSubmitting(true);
+
+    try {
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS credentials are not configured.");
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject || `Portfolio inquiry from ${formData.name}`,
+          message: formData.message,
+          to_email: PORTFOLIO_DATA.personalInfo.email,
+        },
+        publicKey
+      );
+
+      setFormSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 4000);
+      setTimeout(() => {
+        setFormSubmitted(false);
+      }, 4000);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setFormError("Unable to send the message right now. Please email me directly at " + PORTFOLIO_DATA.personalInfo.email + " instead.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Filter projects based on search query
@@ -1023,11 +1064,18 @@ export default function App() {
                     />
                   </div>
 
+                  {formError ? (
+                    <div className="rounded-xl border border-rose-500/30 bg-rose-500/10 px-4 py-3 text-sm text-rose-300">
+                      {formError}
+                    </div>
+                  ) : null}
+
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-violet-600/20 transition-all transform hover:-translate-y-0.5 text-sm cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-violet-600/20 transition-all transform hover:-translate-y-0.5 text-sm cursor-pointer disabled:cursor-not-allowed disabled:opacity-70"
                   >
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               )}
