@@ -1,4 +1,4 @@
-name: Deploy Angular Portfolio to GitHub Pages
+name: Deploy Vite Portfolio to GitHub Pages
 
 # Trigger the workflow on push to master branch
 on:
@@ -40,15 +40,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Step 4: Build the Angular project for production
-      - name: Build Angular project
-        run: npm run build -- --configuration production --base-href=/burhan-portfolio/
+      # Step 4: Build the Vite project for production
+      - name: Build Vite project
+        run: npm run build -- --base=/burhan-portfolio/
 
       # Step 5: Upload build artifacts for GitHub Pages
       - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/portfolio/browser
+          path: dist
 
   # Deployment job
   deploy:
