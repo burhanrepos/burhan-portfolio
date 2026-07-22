@@ -226,12 +226,12 @@ const PORTFOLIO_DATA = {
     }
   ] as Achievement[],
   certifications: [
-    { title: "RAG Bootcamp (LAB)", issuer: "KodeKloud", date: "March 2026" },
-    { title: "Next.js 14 & React – The Complete Guide", issuer: "Udemy", date: "September 2024" },
-    { title: "NgRx (with NgRx Data) – The Complete Guide (Angular 18)", issuer: "Udemy", date: "July 2024" },
-    { title: "Advanced React", issuer: "Coursera", date: "October 2023" },
-    { title: "Frontend Development using Angular", issuer: "Coursera", date: "September 2023" },
-    { title: "MEAN/MERN Stack Development Bootcamp", issuer: "SOFTOO", date: "December 2022" }
+    { title: "RAG Bootcamp (LAB)", issuer: "KodeKloud", date: "March 2026", link: "https://certificates.kodekloud.com/8713775a-1361-49a3-8c2c-bb938bf0549d/13652a75-40c1-415f-8eea-9d540767a127/7c0af577-d6b6-43ca-842f-ec09bea16150.pdf" },
+    { title: "Next.js 14 & React – The Complete Guide", issuer: "Udemy", date: "September 2024", link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-e2091004-a966-4750-ac63-e7f025f2405c.pdf" },
+    { title: "NgRx (with NgRx Data) – The Complete Guide (Angular 18)", issuer: "Udemy", date: "July 2024", link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-a77e2c83-08e2-46dc-b64b-24a7fdf29d30.pdf" },
+    { title: "Advanced React", issuer: "Coursera", date: "October 2023", link: "https://www.coursera.org/account/accomplishments/certificate/FY6GXVWNUDH2" },
+    { title: "Frontend Development using Angular", issuer: "Coursera", date: "September 2023", link: "https://www.coursera.org/account/accomplishments/certificate/VA9SMMZHPQ4R" },
+    { title: "MEAN/MERN Stack Development Bootcamp", issuer: "SOFTOO", date: "December 2022", link: "https://drive.google.com/file/d/12L3WiH0GjmHIZinUo-CU4BEjsPEW6B9y/view" }
   ] as Certification[]
 };
 
@@ -875,8 +875,11 @@ export default function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {PORTFOLIO_DATA.certifications.map((cert, index) => (
-              <div
+              <a
                 key={index}
+                href={cert.link || '#'}
+                target={cert.link ? '_blank' : undefined}
+                rel={cert.link ? 'noopener noreferrer' : undefined}
                 className="glass-panel rounded-2xl p-5 hover:border-violet-500/20 transition-all flex flex-col justify-between group text-left"
               >
                 <div className="flex items-start justify-between gap-4">
@@ -895,8 +898,17 @@ export default function App() {
                   <span>{cert.issuer}</span>
                   <span className="font-mono">{cert.date}</span>
                 </div>
-              </div>
+              </a>
             ))}
+
+            <a
+              href="https://www.linkedin.com/in/burhan-shaheen-49b3aa1b0/details/certifications/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-violet-500/40 px-4 py-2 text-sm font-semibold text-violet-300 transition hover:border-violet-400 hover:bg-violet-500/10 col-span-full mx-auto"
+            >
+              View All
+            </a>
           </div>
         </div>
       </section>
